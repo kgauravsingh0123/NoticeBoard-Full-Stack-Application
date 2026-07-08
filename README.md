@@ -1,20 +1,9 @@
 # Notice Board CRUD Application
 
-A full-stack Notice Board application built using **Next.js (Pages Router)**, **Prisma ORM**, **Supabase PostgreSQL**, and **Tailwind CSS v4**. This project was developed as part of the Reno Platforms Web Development Assignment.
+A full-stack Notice Board application built using **Next.js (Pages Router)**, **Prisma ORM**, **Neon PostgreSQL**, and **Tailwind CSS v4**. This project was developed as part of the Reno Platforms Web Development Assignment.
 
----
 
-## Live Demo
 
-**Vercel:** https://your-vercel-url.vercel.app
-
----
-
-## GitHub Repository
-
-https://github.com/yourusername/noticeboard
-
----
 
 # Features
 
@@ -25,7 +14,7 @@ https://github.com/yourusername/noticeboard
 - Responsive design (Desktop & Mobile)
 - Server-side validation
 - Prisma ORM
-- Supabase PostgreSQL Database
+- Neon PostgreSQL Database
 - RESTful API Routes
 - Urgent notices displayed first
 - Optional image URL with preview
@@ -49,7 +38,7 @@ https://github.com/yourusername/noticeboard
 
 ### Database
 
-- Supabase PostgreSQL
+- Neon PostgreSQL
 
 ### Deployment
 
