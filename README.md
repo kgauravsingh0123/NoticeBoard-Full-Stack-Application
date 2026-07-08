@@ -1,36 +1,299 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notice Board CRUD Application
 
-## Getting Started
+A full-stack Notice Board application built using **Next.js (Pages Router)**, **Prisma ORM**, **Supabase PostgreSQL**, and **Tailwind CSS v4**. This project was developed as part of the Reno Platforms Web Development Assignment.
 
-First, run the development server:
+---
+
+## Live Demo
+
+**Vercel:** https://your-vercel-url.vercel.app
+
+---
+
+## GitHub Repository
+
+https://github.com/yourusername/noticeboard
+
+---
+
+# Features
+
+- Create a Notice
+- View all Notices
+- Edit existing Notices
+- Delete Notices with confirmation modal
+- Responsive design (Desktop & Mobile)
+- Server-side validation
+- Prisma ORM
+- Supabase PostgreSQL Database
+- RESTful API Routes
+- Urgent notices displayed first
+- Optional image URL with preview
+
+---
+
+# Tech Stack
+
+### Frontend
+
+- Next.js (Pages Router)
+- React
+- TypeScript
+- Tailwind CSS v4
+- Axios
+
+### Backend
+
+- Next.js API Routes
+- Prisma ORM
+
+### Database
+
+- Supabase PostgreSQL
+
+### Deployment
+
+- Vercel
+
+---
+
+# Project Structure
+
+```
+noticeboard
+│
+├── components
+│   ├── ConfirmModal.tsx
+│   ├── Navbar.tsx
+│   ├── NoticeCard.tsx
+│   └── NoticeForm.tsx
+│
+├── lib
+│   └── db.ts
+│
+├── pages
+│   ├── api
+│   │   └── notices
+│   │       ├── index.ts
+│   │       └── [id].ts
+│   │
+│   ├── notices
+│   │   ├── index.tsx
+│   │   ├── new.tsx
+│   │   └── [id].tsx
+│   │
+│   ├── _app.tsx
+│   │
+│   └── index.tsx
+│
+├── prisma
+│   └── schema.prisma
+│
+├── public
+│
+├── styles
+│   └── globals.css
+│
+├── .env
+├── package.json
+└── README.md
+```
+
+---
+
+# Database Schema
+
+The application stores notices with the following fields:
+
+| Field | Type |
+|-------|------|
+| title | String |
+| body | String |
+| category | Exam / Event / General |
+| priority | Normal / Urgent |
+| publishDate | Date |
+| image | Optional String |
+
+---
+
+# API Routes
+
+## Get all notices
+
+```
+GET /api/notices
+```
+
+Returns all notices ordered by priority.
+
+---
+
+## Get single notice
+
+```
+GET /api/notices/:id
+```
+
+Returns one notice.
+
+---
+
+## Create notice
+
+```
+POST /api/notices
+```
+
+Creates a new notice.
+
+---
+
+## Update notice
+
+```
+PUT /api/notices/:id
+```
+
+Updates an existing notice.
+
+---
+
+## Delete notice
+
+```
+DELETE /api/notices/:id
+```
+
+Deletes a notice after confirmation.
+
+---
+
+# Server-side Validation
+
+Validation is implemented inside the API routes.
+
+The API validates:
+
+- Title is required
+- Body is required
+- Publish Date is valid
+- Category value is valid
+- Priority value is valid
+
+If validation fails, appropriate HTTP status codes and error messages are returned.
+
+---
+
+# How to Run Locally
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/noticeboard.git
+```
+
+```bash
+cd noticeboard
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+Example:
+
+```env
+DATABASE_URL="your_supabase_pooler_connection"
+
+DIRECT_URL="your_supabase_direct_connection"
+```
+
+---
+
+## Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+---
+
+## Run Database Migration
+
+```bash
+npx prisma migrate dev --name init
+```
+
+---
+
+## Start Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Assignment Requirements Covered
 
-To learn more about Next.js, take a look at the following resources:
+- Full CRUD Operations
+- Server-side Validation
+- Prisma ORM
+- Hosted Database
+- Next.js Pages Router
+- Responsive UI
+- Delete Confirmation Modal
+- REST API Design
+- Urgent Notices Ordered First Using Prisma
+- Public Deployment Ready
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# One Improvement With More Time
 
-## Deploy on Vercel
+If given more time, I would extend the application with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Pagination for large numbers of notices
+
+- Authentication and role-based access control
+
+
+---
+
+# AI Usage
+
+AI tools were used during development to:
+
+- Took the help of AI for creating some frontend component not whole
+
+- Explain Next.js Pages Router concepts
+
+
+All generated code was reviewed, modified, integrated, and tested manually before submission.
+
+---
+
+# Author
+
+**Kumar Gaurav**
+
+B.Tech (Information Technology)
+
+Full Stack Developer
